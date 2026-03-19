@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#001533",
+                        "tertiary-fixed": "#ffe07d",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#564500",
+                        "on-secondary-fixed": "#001e30",
+                        "primary-fixed-dim": "#b1c7f3",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary-container": "#7c92bb",
+                        "surface-container": "#eeeeee",
+                        "surface-dim": "#dadada",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#004b70",
+                        "on-surface-variant": "#44474e",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#4d3e00",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#8ccdff",
+                        "on-primary-fixed": "#001b3e",
+                        "secondary": "#006493",
+                        "inverse-primary": "#b1c7f3",
+                        "tertiary-fixed-dim": "#ebc31a",
+                        "on-secondary-container": "#00547c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#231b00",
+                        "outline": "#74777f",
+                        "tertiary": "#725c00",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-tint": "#495f85",
+                        "on-primary-fixed-variant": "#31476c",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#cca700",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#80c8fe",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed": "#cae6ff",
+                        "outline-variant": "#c4c6cf",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#122a4d",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f3"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .bg-power-flow {
+            background: linear-gradient(135deg, #001533 0%, #122a4d 100%);
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+    <!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all duration-300" id="main-header">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4 relative z-50">
+        <div class="text-2xl font-bold tracking-tighter text-[#001533] dark:text-blue-50 font-headline uppercase relative z-50 cursor-pointer" onclick="window.location.href='../home/index.html'">
+            Kite Electric
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-slate-600 dark:text-slate-400 hover:text-[#001533] dark:hover:text-blue-50" href="../home/index.html">Home</a>
+            <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-[#001533] border-b-2 border-yellow-400 pb-1 dark:text-blue-50" href="../services/services.html">Services</a>
+            <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-slate-600 dark:text-slate-400 hover:text-[#001533] dark:hover:text-blue-50" href="../about_us/about_us.html">About</a>
+            <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-slate-600 dark:text-slate-400 hover:text-[#001533] dark:hover:text-blue-50" href="../contact/contact.html">Contact</a>
+        </div>
+        <div class="flex items-center gap-4 relative z-50">
+            <button class="px-6 py-2 bg-gradient-to-br from-[#001533] to-[#122a4d] text-white rounded font-label text-sm font-bold uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 hidden md:block" onclick="window.location.href='tel:+15551234567'">
+                Call Now
+            </button>
+            <button id="mobile-menu-btn" class="md:hidden text-[#001533] dark:text-blue-50 focus:outline-none transition-transform active:scale-95 relative z-[60]">
+                <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Menu Backdrop -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[45] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white dark:bg-slate-950 z-[50] flex flex-col pt-28 px-8 space-y-8 translate-x-full transition-transform duration-300 shadow-2xl overflow-y-auto md:hidden border-l border-slate-200 dark:border-slate-800">
+    <div class="flex flex-col space-y-6">
+        <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4" href="../home/index.html">Home</a>
+        <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4" href="../services/services.html">Services</a>
+        <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4" href="../about_us/about_us.html">About</a>
+        <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4" href="../contact/contact.html">Contact</a>
+    </div>
+    
+    <div class="pt-8 mt-auto mb-12">
+        <button class="w-full py-4 bg-gradient-to-br from-[#001533] to-[#122a4d] text-white rounded font-label text-xl font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-3" onclick="window.location.href='tel:+15551234567'">
+            <span class="material-symbols-outlined">call</span>
+            Call Now
+        </button>
+        <p class="text-center text-sm text-slate-500 mt-6 font-medium">Licensed & Insured in Ohio</p>
+    </div>
+</div>
+
+<!-- Mobile Menu Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+        const icon = document.getElementById('menu-icon');
+        
+        function toggleMenu() {
+            const isOpen = !menu.classList.contains('translate-x-full');
+            if(isOpen) {
+                // Close Menu
+                menu.classList.add('translate-x-full');
+                backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+                backdrop.classList.add('opacity-0', 'pointer-events-none');
+                icon.textContent = 'menu';
+                document.body.style.overflow = '';
+            } else {
+                // Open Menu
+                menu.classList.remove('translate-x-full');
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                backdrop.classList.add('opacity-100', 'pointer-events-auto');
+                icon.textContent = 'close';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        if(btn && menu && backdrop && icon) {
+            btn.addEventListener('click', toggleMenu);
+            backdrop.addEventListener('click', toggleMenu);
+        }
+    });
+</script>
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="relative min-h-[614px] flex items-center bg-power-flow overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <img alt="Electrical components"
+                    class="https://images.pexels.com/photos/27928761/pexels-photo-27928761.jpeg" />
+            </div>
+            <div class="max-w-7xl mx-auto px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span
+                        class="inline-block font-label text-tertiary-fixed text-sm uppercase tracking-[0.2em] font-bold">
+                        Powering Precision
+                    </span>
+                    <h1 class="text-white font-headline text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+                        Electrical Excellence <br /><span class="text-tertiary-fixed">Without Compromise</span>
+                    </h1>
+                    <p class="text-primary-fixed-dim text-lg max-w-lg leading-relaxed">
+                        From intricate residential smart systems to heavy industrial grid maintenance, Kite Electric
+                        delivers engineering-grade solutions across Ohio.
+                    </p>
+                    <div class="flex gap-4">
+                        <button
+                            class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg shadow-tertiary/20"
+                            onclick="window.location.href='../services/services.html'">
+                            Request Service
+                        </button>
+                        <button
+                            class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest hover:bg-white/20 transition-all"
+                            onclick="window.location.href='../contact/contact.html'">
+                            View Portfolio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Grid Section -->
+        <section class="py-24 bg-surface">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div class="max-w-2xl">
+                        <span
+                            class="font-label text-secondary text-sm uppercase tracking-widest font-bold mb-4 block">Core
+                            Competencies</span>
+                        <h2 class="font-headline text-4xl md:text-5xl font-bold text-primary tracking-tight">
+                            Comprehensive Solutions for Every Environment</h2>
+                    </div>
+                    <p class="text-on-surface-variant max-w-xs leading-relaxed border-l-2 border-tertiary pl-6 py-2">
+                        Safety, integrity, and efficiency are the three pillars of every circuit we wire.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Residential Card -->
+                    <div
+                        class="group bg-surface-container-lowest p-10 rounded-lg flex flex-col h-full transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-primary/5">
+                        <div
+                            class="w-14 h-14 bg-surface-container-high rounded-lg flex items-center justify-center mb-8 group-hover:bg-primary-container transition-colors duration-300">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl group-hover:text-tertiary-fixed transition-colors"
+                                data-icon="home_work">home_work</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-primary mb-4">Residential</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                            Premium home electrical services including panel upgrades, custom lighting design, EV
+                            charger installations, and comprehensive safety inspections for modern living.
+                        </p>
+                        <a class="group/link flex items-center font-headline font-bold text-secondary uppercase tracking-widest text-sm hover:text-primary transition-colors"
+                            href="../about_us/about_us.html">
+                            Learn More
+                            <span
+                                class="material-symbols-outlined ml-2 text-lg group-hover/link:translate-x-1 transition-transform"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Commercial Card -->
+                    <div
+                        class="group bg-surface-container-lowest p-10 rounded-lg flex flex-col h-full transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-primary/5">
+                        <div
+                            class="w-14 h-14 bg-surface-container-high rounded-lg flex items-center justify-center mb-8 group-hover:bg-primary-container transition-colors duration-300">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl group-hover:text-tertiary-fixed transition-colors"
+                                data-icon="business">business</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-primary mb-4">Commercial</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                            Scalable electrical infrastructure for businesses, retail spaces, and offices. Specializing
+                            in energy-efficient retrofitting and high-capacity system maintenance.
+                        </p>
+                        <a class="group/link flex items-center font-headline font-bold text-secondary uppercase tracking-widest text-sm hover:text-primary transition-colors"
+                            href="../about_us/about_us.html">
+                            Learn More
+                            <span
+                                class="material-symbols-outlined ml-2 text-lg group-hover/link:translate-x-1 transition-transform"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Industrial Card -->
+                    <div
+                        class="group bg-surface-container-lowest p-10 rounded-lg flex flex-col h-full transition-all duration-300 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-primary/5 border-t-4 border-tertiary">
+                        <div class="w-14 h-14 bg-primary-container rounded-lg flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-tertiary-fixed text-3xl" data-icon="factory"
+                                data-weight="fill" style="font-variation-settings: 'FILL' 1;">factory</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-primary mb-4">Industrial</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                            Heavy-duty solutions for manufacturing plants, warehouses, and distribution centers. Experts
+                            in machine wiring, motor controls, and emergency power systems.
+                        </p>
+                        <a class="group/link flex items-center font-headline font-bold text-secondary uppercase tracking-widest text-sm hover:text-primary transition-colors"
+                            href="../about_us/about_us.html">
+                            Learn More
+                            <span
+                                class="material-symbols-outlined ml-2 text-lg group-hover/link:translate-x-1 transition-transform"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Specialized Conduit Progress/Feature Section -->
+        <section class="py-24 bg-surface-container-low">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid md:grid-cols-2 gap-20 items-center">
+                    <div class="relative">
+                        <div class="aspect-square bg-surface-container-highest rounded-lg overflow-hidden">
+                            <img alt="Electrician working"
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                data-alt="Professional electrician working on a complex breaker panel"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPKAEfW3J01ZazXeKwDJqdQiGO8RsUOnlFCsdy13w-p0n0uwR5GbCZ-q_kiLOvUq8r-O4zESF8P6JjVnwGJXO3D4uqdyfQ4X9bjfWmTwzGMbb9p08Jdo7f0Ijb7Cqx3kQ6uExc3GBlncksUyQgwglMLLCS-Z14oBnzvxJmn4TAVpm1TFIMCFGpkmGj_5w3Ou2FKVfbNZKnogWKwJcmry9tvLQL9l8qnzHxF_ONFu9KksG3lp66modAjAkMt5ZYAUCMex8Rm7MACujW" />
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-lg shadow-xl">
+                            <span class="text-tertiary-fixed text-5xl font-headline font-extrabold block">15+</span>
+                            <span class="text-white text-xs font-label uppercase tracking-widest font-bold">Years
+                                Experience</span>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <h2 class="font-headline text-4xl font-bold text-primary tracking-tight">The Kite Standard of
+                            Safety</h2>
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <div
+                                    class="flex justify-between font-label text-sm font-bold uppercase tracking-wider text-primary">
+                                    <span>Code Compliance</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                    <div class="h-full bg-tertiary shadow-[0_0_8px_rgba(250,208,44,0.6)] w-full"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div
+                                    class="flex justify-between font-label text-sm font-bold uppercase tracking-wider text-primary">
+                                    <span>Rapid Response</span>
+                                    <span>24/7</span>
+                                </div>
+                                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                    <div class="h-full bg-tertiary shadow-[0_0_8px_rgba(250,208,44,0.6)] w-[90%]"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div
+                                    class="flex justify-between font-label text-sm font-bold uppercase tracking-wider text-primary">
+                                    <span>Project Accuracy</span>
+                                    <span>99%</span>
+                                </div>
+                                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                    <div class="h-full bg-tertiary shadow-[0_0_8px_rgba(250,208,44,0.6)] w-[99%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant italic">
+                            "Kite Electric didn't just fix our manufacturing line; they optimized our entire facility's
+                            load distribution. Professionalism at its finest."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary-container"></div>
+                            <div>
+                                <p class="font-headline font-bold text-primary text-sm">Marcus Thorne</p>
+                                <p class="text-on-surface-variant text-xs font-label">Lead Engineer, Apex Manufacturing
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-24 bg-white border-y border-outline-variant/15">
+            <div class="max-w-4xl mx-auto px-8 text-center space-y-8">
+                <h2 class="font-headline text-4xl md:text-5xl font-bold text-primary tracking-tighter">Ready to
+                    Electrify Your Next Project?</h2>
+                <p class="text-on-surface-variant text-lg leading-relaxed">
+                    Contact Ohio's premier electrical specialists for a consultation tailored to your specific
+                    industrial or residential needs.
+                </p>
+                <div class="pt-4">
+                    <a class="inline-flex items-center gap-3 bg-primary text-white px-10 py-5 rounded-lg font-headline font-bold text-lg hover:bg-secondary transition-all"
+                        href="tel:5550123">
+                        <span class="material-symbols-outlined" data-icon="phone_in_talk">phone_in_talk</span>
+                        Contact Us Today
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Shell -->
+    <footer class="bg-slate-900 dark:bg-black w-full pt-16 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+            <div class="space-y-6">
+                <div class="text-xl font-bold text-white font-headline">Kite Electric</div>
+                <p class="font-body text-slate-300 text-sm leading-relaxed">
+                    Precision engineering for a connected world. Licensed, bonded, and insured in the state of Ohio.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-headline text-white uppercase tracking-widest text-sm font-bold">Company Info</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body text-slate-400 hover:text-white hover:text-yellow-400 transition-colors duration-200 text-sm"
+                            href="../about_us/about_us.html">About Us</a></li>
+                    <li><a class="font-body text-slate-400 hover:text-white hover:text-yellow-400 transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Certifications</a></li>
+                    <li><a class="font-body text-slate-400 hover:text-white hover:text-yellow-400 transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-headline text-white uppercase tracking-widest text-sm font-bold">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body text-slate-400 hover:text-white hover:text-yellow-400 transition-colors duration-200 text-sm font-bold text-yellow-400"
+                            href="../services/services.html">Services</a></li>
+                    <li><a class="font-body text-slate-400 hover:text-white hover:text-yellow-400 transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Project Gallery</a></li>
+                    <li><a class="font-body text-slate-400 hover:text-white hover:text-yellow-400 transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Safety Standards</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-headline text-white uppercase tracking-widest text-sm font-bold">Contact Details</h4>
+                <div class="space-y-4 text-slate-400 text-sm">
+                    <p class="flex items-center gap-3"><span class="material-symbols-outlined text-sm"
+                            data-icon="location_on">location_on</span> Columbus, Ohio</p>
+                    <p class="flex items-center gap-3"><span class="material-symbols-outlined text-sm"
+                            data-icon="mail">mail</span> contact@kiteelectricohio.com</p>
+                    <p class="flex items-center gap-3 font-bold text-white"><span
+                            class="material-symbols-outlined text-sm" data-icon="call">call</span> (614) 555-0123</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-800">
+            <p class="font-body text-slate-500 text-xs text-center md:text-left">
+                © 2024 Kite Electric. Industrial Precision &amp; Editorial Elegance.
+            </p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../aos-init.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#001533",
+                        "tertiary-fixed": "#ffe07d",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#564500",
+                        "on-secondary-fixed": "#001e30",
+                        "primary-fixed-dim": "#b1c7f3",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary-container": "#7c92bb",
+                        "surface-container": "#eeeeee",
+                        "surface-dim": "#dadada",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#004b70",
+                        "on-surface-variant": "#44474e",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#4d3e00",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#8ccdff",
+                        "on-primary-fixed": "#001b3e",
+                        "secondary": "#006493",
+                        "inverse-primary": "#b1c7f3",
+                        "tertiary-fixed-dim": "#ebc31a",
+                        "on-secondary-container": "#00547c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#231b00",
+                        "outline": "#74777f",
+                        "tertiary": "#725c00",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-tint": "#495f85",
+                        "on-primary-fixed-variant": "#31476c",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#cca700",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#80c8fe",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed": "#cae6ff",
+                        "outline-variant": "#c4c6cf",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#122a4d",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f3"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(0, 21, 51, 0.2);
+            color: transparent;
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-surface font-body text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+    <!-- Top Navigation Shell -->
+    <header
+        class="fixed top-0 w-full z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all duration-300"
+        id="main-header">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4 relative z-50">
+            <div class="text-2xl font-bold tracking-tighter text-[#001533] dark:text-blue-50 font-headline uppercase relative z-50 cursor-pointer"
+                onclick="window.location.href='../home/index.html'">
+                Kite Electric
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-[#001533] border-b-2 border-yellow-400 pb-1 dark:text-blue-50"
+                    href="../home/index.html">Home</a>
+                <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-slate-600 dark:text-slate-400 hover:text-[#001533] dark:hover:text-blue-50"
+                    href="../services/services.html">Services</a>
+                <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-slate-600 dark:text-slate-400 hover:text-[#001533] dark:hover:text-blue-50"
+                    href="../about_us/about_us.html">About</a>
+                <a class="font-label text-sm font-medium uppercase tracking-widest transition-colors duration-300 text-slate-600 dark:text-slate-400 hover:text-[#001533] dark:hover:text-blue-50"
+                    href="../contact/contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4 relative z-50">
+                <button
+                    class="px-6 py-2 bg-gradient-to-br from-[#001533] to-[#122a4d] text-white rounded font-label text-sm font-bold uppercase tracking-widest hover:opacity-80 transition-all active:scale-95 hidden md:block"
+                    onclick="window.location.href='tel:+15551234567'">
+                    Call Now
+                </button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-[#001533] dark:text-blue-50 focus:outline-none transition-transform active:scale-95 relative z-[60]">
+                    <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="mobile-menu-backdrop"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[45] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white dark:bg-slate-950 z-[50] flex flex-col pt-28 px-8 space-y-8 translate-x-full transition-transform duration-300 shadow-2xl overflow-y-auto md:hidden border-l border-slate-200 dark:border-slate-800">
+        <div class="flex flex-col space-y-6">
+            <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4"
+                href="index.html">Home</a>
+            <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4"
+                href="services.html">Services</a>
+            <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4"
+                href="about_us.html">About</a>
+            <a class="text-2xl font-bold font-headline uppercase tracking-widest text-[#001533] dark:text-blue-50 hover:text-yellow-500 transition-colors border-b border-slate-100 dark:border-slate-800 pb-4"
+                href="contact.html">Contact</a>
+        </div>
+
+        <div class="pt-8 mt-auto mb-12">
+            <button
+                class="w-full py-4 bg-gradient-to-br from-[#001533] to-[#122a4d] text-white rounded font-label text-xl font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-3"
+                onclick="window.location.href='tel:+15551234567'">
+                <span class="material-symbols-outlined">call</span>
+                Call Now
+            </button>
+            <p class="text-center text-sm text-slate-500 mt-6 font-medium">Licensed & Insured in Ohio</p>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const backdrop = document.getElementById('mobile-menu-backdrop');
+            const icon = document.getElementById('menu-icon');
+
+            function toggleMenu() {
+                const isOpen = !menu.classList.contains('translate-x-full');
+                if (isOpen) {
+                    // Close Menu
+                    menu.classList.add('translate-x-full');
+                    backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+                    backdrop.classList.add('opacity-0', 'pointer-events-none');
+                    icon.textContent = 'menu';
+                    document.body.style.overflow = '';
+                } else {
+                    // Open Menu
+                    menu.classList.remove('translate-x-full');
+                    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                    backdrop.classList.add('opacity-100', 'pointer-events-auto');
+                    icon.textContent = 'close';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            if (btn && menu && backdrop && icon) {
+                btn.addEventListener('click', toggleMenu);
+                backdrop.addEventListener('click', toggleMenu);
+            }
+        });
+    </script>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[921px] flex items-center overflow-hidden bg-primary overflow-hidden">
+            <div class="absolute inset-0 opacity-40">
+                <img alt="Industrial Electrical Panel" class="w-full h-full object-cover"
+                    data-alt="Modern industrial electrical wiring and conduits close up"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg4_IPXo0iwdBUaj2BT04JX7y17eGQud69QaifShYfC9rgRMhbV0Sf4keykuWoIt1RGmtDYFzPX3rfCIjdVZdRBCfmhd8UszxbITjLZO42J_B_aC9aoixsCD--eruVEuIRKqp0WiaIh2PeCQJppEiEab9J35qz--Cx_4E4svKzwcW1HbjEAJ7QO49MOYyncv4U-qY-PZ9dwwKuE5Wj9jRGLCTnji7-GUFuQy4xebZhAErmShv_2I0G2bk671GEuCDXvsh8TAkP49eQ" />
+                <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-xs font-bold uppercase tracking-[0.2em] rounded-sm">
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">bolt</span>
+                        Precision Power Solutions
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-headline font-bold text-white tracking-tighter leading-[0.9]">
+                        Wiring the <span class="text-tertiary-fixed-dim">Future</span> of Industry.
+                    </h1>
+                    <p class="text-lg text-on-primary-container max-w-md font-light leading-relaxed">
+                        Northeast Ohio's premier electrical contractor specializing in high-precision industrial systems
+                        and refined residential design.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button
+                            class="px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed font-bold uppercase tracking-widest text-sm rounded hover:brightness-110 transition-all flex items-center gap-2 group"
+                            onclick="window.location.href='../services/services.html'">
+                            Schedule Service
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                        <button
+                            class="px-8 py-4 border border-outline-variant/30 text-white font-bold uppercase tracking-widest text-sm rounded hover:bg-white/10 transition-all"
+                            onclick="window.location.href='../contact/contact.html'">
+                            Our Portfolio
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden md:block relative h-[600px]">
+                    <div
+                        class="absolute right-0 top-1/2 -translate-y-1/2 w-full h-full border border-tertiary-fixed/20 rounded-xl transform rotate-3">
+                    </div>
+                    <div
+                        class="absolute right-4 top-1/2 -translate-y-1/2 w-full h-full bg-surface-container-highest/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl">
+                        <img alt="Electrical Engineer"
+                            class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700"
+                            data-alt="Professional electrician working on a control panel"
+                            src="https://images.pexels.com/photos/27928761/pexels-photo-27928761.jpeg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Services Grid -->
+        <section class="py-24 bg-surface">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="max-w-2xl">
+                        <label
+                            class="font-label text-sm font-bold text-tertiary uppercase tracking-[0.3em] block mb-4">Core
+                            Expertise</label>
+                        <h2 class="text-5xl font-headline font-bold text-primary tracking-tight">Engineered for
+                            Reliability.</h2>
+                    </div>
+                    <p class="text-on-surface-variant font-body max-w-sm">From heavy industrial automation to
+                        architectural lighting, we provide a spectrum of electrical excellence.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Industrial -->
+                    <div class="md:col-span-2 group relative h-[400px] overflow-hidden rounded-lg bg-primary">
+                        <div
+                            class="absolute inset-0 opacity-60 group-hover:scale-105 transition-transform duration-700">
+                            <img alt="Industrial Facility" class="w-full h-full object-cover"
+                                data-alt="Large scale industrial factory interior with electrical conduits"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgMHmlM0Plfs8SCEh8X5I7dcRF6gKq4lVVYRYAGcos1VnqKzpqNGwpVpoL7OF2AX305VHRpniZKro-klHCsDK13L2cdJkT0WvNRhIzOBnn2Dl4Q6tyrKtuTPIjVN26D9p53PxH015LVhdvZQaFOjZpmEruttrQIBEUOaAw-zAFkEOd5K0bxLD-IH4Cci7gr1NMA2FnEGzSwyiDG1CP5Ld120HpCBML6O4MuU2Pe4R5HwymXAq2WHo323Qn7sXLzrn0nDdYcsujAeO2" />
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-8 space-y-3">
+                            <div class="w-12 h-1 bg-tertiary-fixed"></div>
+                            <h3 class="text-3xl font-headline font-bold text-white uppercase tracking-tighter">
+                                Industrial</h3>
+                            <p class="text-on-primary-container max-w-md">Automation systems, motor controls, and
+                                high-voltage power distribution for manufacturing leaders.</p>
+                            <a class="inline-flex items-center gap-2 text-tertiary-fixed font-bold uppercase tracking-widest text-xs pt-4 group-hover:gap-4 transition-all"
+                                href="../contact/contact.html">
+                                Explore Capabilities <span
+                                    class="material-symbols-outlined text-sm">trending_flat</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Commercial -->
+                    <div
+                        class="group relative h-[400px] overflow-hidden rounded-lg bg-surface-container-high hover:bg-surface-container-highest transition-colors">
+                        <div class="p-8 h-full flex flex-col justify-between">
+                            <span class="material-symbols-outlined text-4xl text-primary"
+                                style="font-variation-settings: 'wght' 300;">business</span>
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-headline font-bold text-primary uppercase tracking-tight">
+                                    Commercial</h3>
+                                <p class="text-on-surface-variant text-sm">Comprehensive electrical solutions for
+                                    retail, office spaces, and multi-unit developments.</p>
+                                <div class="pt-4 overflow-hidden">
+                                    <img alt="Commercial Office"
+                                        class="w-full h-32 object-cover rounded transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500"
+                                        data-alt="Modern brightly lit commercial office space"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV7XYMuF-xXwz-8_xPyDEZ20ODhQ59cuxUMyIw7bml-bX6DrETDlEH8i6vemMzCSLfAaJh8c4eGpbpe-zbJa7eqO3L8X71StF1jBlk_z9h05LtCT--7EhvRvlRBAGq5I6D385eS_0C8XDtyxcOU9HfptOkNkjB0SOGtcVGqYe8uo8b8CWP0cEvh-pSs-zgwnbvDAAQcQNYo4mSbeRiBpViFiXWDJirLjVmZk_VFJ8KFuIDY-5zHPvxlyKJ-l6SDzmLH_ArR7hbY0RB" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Residential -->
+                    <div class="group relative h-[400px] overflow-hidden rounded-lg bg-surface-container-low">
+                        <div class="absolute inset-0 opacity-20">
+                            <img alt="Modern Home" class="w-full h-full object-cover"
+                                data-alt="Contemporary home interior with smart lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC32D_zinyGexlrzpCIBLE8b57chF4tn2cfs9JnkB9g4KSRF9u6o1vFJrb_fvUQ8MNgrB62WJWWg9ZykqCkrXzPiRymUFU3CGlXaaXHN5dtb_Q1hLKyJDttCXmVWGlc_U1DxrWPn8jruXHVhUNp1FHQqO0beE8UABdEgB4dcXO_NhE2VpTUv7sYIx2G9BjYV6fQWobyuhyHpvlVjppNpr0-XsN0DBPsPu9WSmFdbmnIDk9qTMS2KTZKoi7g6zTmCf1C76Znqv1vDbre" />
+                        </div>
+                        <div class="p-8 h-full flex flex-col justify-between relative z-10">
+                            <span class="material-symbols-outlined text-4xl text-primary"
+                                style="font-variation-settings: 'wght' 300;">home_work</span>
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-headline font-bold text-primary uppercase tracking-tight">
+                                    Residential</h3>
+                                <p class="text-on-surface-variant text-sm">Custom lighting design, EV charging stations,
+                                    and smart home integration for modern living.</p>
+                                <a class="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs pt-4 group-hover:gap-4 transition-all"
+                                    href="../services/services.html">
+                                    View Services <span class="material-symbols-outlined text-sm">trending_flat</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Specialized -->
+                    <div class="md:col-span-2 group relative h-[400px] overflow-hidden rounded-lg bg-primary-container">
+                        <div class="grid md:grid-cols-2 h-full">
+                            <div class="p-8 flex flex-col justify-center space-y-4">
+                                <div
+                                    class="inline-block px-2 py-1 border border-tertiary-fixed text-tertiary-fixed text-[10px] font-bold uppercase tracking-widest w-fit">
+                                    Emergency 24/7</div>
+                                <h3
+                                    class="text-3xl font-headline font-bold text-white uppercase tracking-tighter leading-none">
+                                    Maintenance &amp; Rapid Response</h3>
+                                <p class="text-on-primary-container text-sm">Preventative thermal imaging and immediate
+                                    repair services to keep your operations running.</p>
+                                <button
+                                    class="px-6 py-3 bg-white text-primary font-bold uppercase tracking-widest text-xs w-fit rounded hover:bg-tertiary-fixed transition-colors"
+                                    onclick="window.location.href='tel:+15551234567'">Call
+                                    Emergency Dispatch</button>
+                            </div>
+                            <div class="relative overflow-hidden hidden md:block">
+                                <img alt="Technician"
+                                    class="h-full w-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-1000"
+                                    data-alt="Close up of electrical diagnostic tools and technician"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuClAregAFJPApFMXgdOJpEUwYF-8jpE3c-tD5r0NboeiEk07E7lvTzfirAgYPL4zcx4LI7qdWQ6vwwdL8uRakUdvjwlXBGECkEwgWhUBwtJFQZo-6F4nT-iSAc8GR_dP3ugbYfcA-FLuxt3I-vTmRHcynxlFz9lJqmyLqC0_KurIvxFkTodk4vE4CN-mKZ25ZqByByHhdVx9BET4MIYLkICfTKIQgunbB87lgynDRTi3paV2TonjSLwr3HbBCByosCsDA537UUvl0Sh" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Trust & Technical Specs -->
+        <section class="py-24 bg-surface-container-low">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid md:grid-cols-2 gap-20 items-center">
+                    <div class="relative">
+                        <div
+                            class="absolute -top-12 -left-12 text-[120px] font-headline font-bold text-outline opacity-10 pointer-events-none select-none">
+                            TRUST
+                        </div>
+                        <h3 class="text-4xl font-headline font-bold text-primary mb-8 relative z-10">Precision
+                            Standards. Verified Quality.</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 flex-shrink-0 bg-primary flex items-center justify-center rounded-sm">
+                                    <span class="material-symbols-outlined text-tertiary-fixed">verified</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline font-bold text-primary uppercase tracking-wide">Fully
+                                        Licensed &amp; Insured</h4>
+                                    <p class="text-on-surface-variant text-sm mt-1">Operating with full compliance of
+                                        Ohio state regulations and rigorous safety protocols.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 flex-shrink-0 bg-primary flex items-center justify-center rounded-sm">
+                                    <span class="material-symbols-outlined text-tertiary-fixed">engineering</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline font-bold text-primary uppercase tracking-wide">Journeyman
+                                        Expertise</h4>
+                                    <p class="text-on-surface-variant text-sm mt-1">Our team consists of career
+                                        professionals with decades of combined specialized experience.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 flex-shrink-0 bg-primary flex items-center justify-center rounded-sm">
+                                    <span class="material-symbols-outlined text-tertiary-fixed">history</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-headline font-bold text-primary uppercase tracking-wide">10+ Years
+                                        in Northeast Ohio</h4>
+                                    <p class="text-on-surface-variant text-sm mt-1">A decade of providing dependable
+                                        service to our local community and industrial partners.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col max-h-[800px] overflow-y-auto pr-4 custom-scrollbar">
+
+                        <div
+                            class="bg-surface-container-lowest p-8 md:p-12 rounded shadow-sm border-l-4 border-tertiary relative mb-8">
+                            <span class="material-symbols-outlined text-5xl text-surface-variant absolute top-8 right-8"
+                                style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                            <div class="space-y-6">
+                                <div class="flex gap-1 text-tertiary">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="text-lg font-body italic text-primary leading-relaxed">
+                                    "These guys did a great job upgrading my electrical panel. Professional and kind!
+                                    Highly recommend"
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+                                            <img alt="Reviewer Jesse Dean" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/a/ACg8ocKF3a8xjH0EQ7bPWAAYExio4fBSIe7tOCB7Rd8k_R-b8XIGGA=s1920-c-rp-mo-br100" />
+                                        </div>
+                                        <div>
+                                            <p class="font-headline font-bold text-primary uppercase tracking-tighter">
+                                                Jesse Dean</p>
+                                            <p
+                                                class="text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">
+                                                Google Maps • 4 days ago</p>
+                                        </div>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google Logo" class="w-6 h-6 opacity-30 grayscale" />
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-8 md:p-12 rounded shadow-sm border-l-4 border-tertiary relative mb-8">
+                            <span class="material-symbols-outlined text-5xl text-surface-variant absolute top-8 right-8"
+                                style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                            <div class="space-y-6">
+                                <div class="flex gap-1 text-tertiary">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="text-lg font-body italic text-primary leading-relaxed">
+                                    "Always on time with scope of work explained and what to expect when finished. Price
+                                    is very exceptional in comparison to others I've used in past with the job done as
+                                    priced."
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+                                            <img alt="Reviewer Joe Scullin" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/a/ACg8ocIAAYqltipARLP-5ykuOFYHPKVxyyZI99TG1OW2J1ZkafP_Aw=s1920-c-rp-mo-br100" />
+                                        </div>
+                                        <div>
+                                            <p class="font-headline font-bold text-primary uppercase tracking-tighter">
+                                                Joe Scullin</p>
+                                            <p
+                                                class="text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">
+                                                Google Maps • 2 weeks ago</p>
+                                        </div>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google Logo" class="w-6 h-6 opacity-30 grayscale" />
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-8 md:p-12 rounded shadow-sm border-l-4 border-tertiary relative mb-8">
+                            <span class="material-symbols-outlined text-5xl text-surface-variant absolute top-8 right-8"
+                                style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                            <div class="space-y-6">
+                                <div class="flex gap-1 text-tertiary">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="text-lg font-body italic text-primary leading-relaxed">
+                                    "Tony and helper did awesome work. Very pleased, professional, personable, and
+                                    reasonable. Will recommend him and use him in the future!"
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+                                            <img alt="Reviewer Rhonda Ridzy" class="w-full h-full object-cover"
+                                                src="https://lh3.googleusercontent.com/a-/ALV-UjV7j45QAQeMjc-31mv1VqI2o6HfU9REVguRM2r0AaInZLRunLA=s1920-c-rp-mo-br100" />
+                                        </div>
+                                        <div>
+                                            <p class="font-headline font-bold text-primary uppercase tracking-tighter">
+                                                Rhonda Ridzy</p>
+                                            <p
+                                                class="text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">
+                                                Google Maps • 2 months ago</p>
+                                        </div>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google Logo" class="w-6 h-6 opacity-30 grayscale" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-24 overflow-hidden relative">
+            <div class="absolute inset-0 bg-primary"></div>
+            <div class="max-w-7xl mx-auto px-8 relative z-10 text-center">
+                <div class="mb-12">
+                    <h2 class="text-5xl md:text-7xl font-headline font-bold text-white tracking-tighter mb-6">Ready to
+                        Power Your Next Project?</h2>
+                    <p class="text-on-primary-container text-lg max-w-2xl mx-auto">Get a technical consultation and a
+                        detailed estimate from our senior engineers today.</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                    <button
+                        class="w-full md:w-auto px-12 py-5 bg-tertiary-fixed text-on-tertiary-fixed font-bold uppercase tracking-[0.2em] text-sm rounded shadow-lg hover:translate-y-[-2px] transition-all"
+                        onclick="window.location.href='../contact/contact.html'">
+                        Request a Quote
+                    </button>
+                    <a class="w-full md:w-auto flex items-center justify-center gap-3 px-12 py-5 border border-outline-variant/30 text-white font-bold uppercase tracking-[0.2em] text-sm rounded hover:bg-white/10 transition-all"
+                        href="tel:1234567890">
+                        <span class="material-symbols-outlined">phone_in_talk</span>
+                        (440) 555-0123
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-black w-full pt-16 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+            <div class="space-y-6">
+                <div class="text-xl font-bold text-white font-headline uppercase tracking-tighter">Kite Electric</div>
+                <p class="font-['Inter'] text-slate-300 text-sm leading-relaxed">Industrial precision and editorial
+                    elegance in every connection we make. Northeast Ohio's trusted electrical partner.</p>
+                <div class="flex gap-4">
+                    <a class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-white hover:border-yellow-400 hover:text-yellow-400 transition-all"
+                        href="../contact/contact.html">
+                        <span class="material-symbols-outlined text-sm">share</span>
+                    </a>
+                    <a class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-white hover:border-yellow-400 hover:text-yellow-400 transition-all"
+                        href="../contact/contact.html">
+                        <span class="material-symbols-outlined text-sm">public</span>
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-['Space_Grotesk'] text-white uppercase tracking-widest text-sm font-bold">Company Info
+                </h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../about_us/about_us.html">About Kite</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Our
+                            Safety Standards</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Case
+                            Studies</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-['Space_Grotesk'] text-white uppercase tracking-widest text-sm font-bold">Services</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Industrial Automation</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Commercial Buildouts</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Custom Residential</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                            href="../contact/contact.html">Emergency Support</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-['Space_Grotesk'] text-white uppercase tracking-widest text-sm font-bold">Contact
+                    Details</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3 text-slate-400">
+                        <span class="material-symbols-outlined text-yellow-400 text-sm">location_on</span>
+                        Cleveland, OH Area
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-400">
+                        <span class="material-symbols-outlined text-yellow-400 text-sm">mail</span>
+                        info@kiteelectricohio.com
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-400">
+                        <span class="material-symbols-outlined text-yellow-400 text-sm">call</span>
+                        (440) 555-0123
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-['Inter'] text-slate-500 text-xs uppercase tracking-widest">© 2024 Kite Electric. Industrial
+                Precision &amp; Editorial Elegance.</p>
+            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                <a class="hover:text-white" href="../contact/contact.html">Privacy Policy</a>
+                <a class="hover:text-white" href="../services/services.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../aos-init.js"></script>
+</body>
+
+</html>
